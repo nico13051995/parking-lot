@@ -1,7 +1,10 @@
 {
   "name": "parking-lot",
   "nativescript": {
-    "id": "org.nativescript.parkinglot"
+    "id": "org.nativescript.parkinglot",
+    "tns-android": {
+      "version": "5.1.0"
+    }
   },
   "version": "0.0.0",
   "scripts": {
@@ -11,22 +14,27 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "android": "tns run android --bundle",
+    "d-android": "tns debug android --device 192.168.1.187:5555 --bundle --chrome",
+    "d-ios": "tns debug ios --bundle --chrome",
+    "android": "tns run android --bundle --device 192.168.1.187:5555",
     "ios": "tns run ios --bundle"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.1.0",
-    "@angular/common": "~7.1.0",
-    "@angular/compiler": "~7.1.0",
-    "@angular/core": "~7.1.0",
-    "@angular/forms": "~7.1.0",
-    "@angular/http": "~7.1.0",
-    "@angular/platform-browser": "~7.1.0",
-    "@angular/platform-browser-dynamic": "~7.1.0",
-    "@angular/router": "~7.1.0",
+    "@angular/animations": "~7.1.2",
+    "@angular/common": "~7.1.2",
+    "@angular/compiler": "~7.1.2",
+    "@angular/core": "~7.1.2",
+    "@angular/forms": "~7.1.2",
+    "@angular/http": "~7.1.2",
+    "@angular/platform-browser": "~7.1.2",
+    "@angular/platform-browser-dynamic": "~7.1.2",
+    "@angular/pwa": "^0.12.3",
+    "@angular/router": "~7.1.2",
+    "@angular/service-worker": "~7.1.2",
     "core-js": "^2.5.4",
-    "nativescript-angular": "~7.1.0",
+    "nativescript-angular": "~7.1.2",
+    "nativescript-onesignal": "^1.0.8",
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~6.3.3",
@@ -34,10 +42,10 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular/cli": "^7.1.0",
-    "@angular/compiler-cli": "~7.1.0",
+    "@angular/cli": "^7.1.2",
+    "@angular/compiler-cli": "~7.1.2",
     "@angular-devkit/build-angular": "~0.11.4",
-    "@nativescript/schematics": "~0.4.0",
+    "@nativescript/schematics": "~0.5.0",
     "@types/jasmine": "2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",

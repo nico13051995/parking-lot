@@ -1,3 +1,4 @@
+import { DetailComponent } from './detail/detail.component';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 
@@ -15,7 +16,7 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    DetailComponent
   ],
   imports: [
     NativeScriptModule,

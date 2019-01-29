@@ -1,0 +1,71 @@
+<ActionBar flat="true" backgroundColor="#FFFFFF" color="#000000">
+</ActionBar>
+
+<GridLayout orientation="vertical" width="100%" height="100%" columns="*"
+    rows="*,auto" [marginTop]='this.isIOS ? "-20" : ""'>
+
+    <StackLayout col="0" row="0" backgroundColor="#f8f8f8">
+        <GridLayout id="detail-page-background" columns="*" rows="auto,*,auto"
+            height="200">
+
+            <GridLayout columns="auto,*,auto" rows="auto" col="0" row="0">
+                <Image col="0" row="0" marginLeft="20" marginTop="10" height="25"
+                    width="35" (tap)="goBack()" src="~/assets/images/shape5@3x.png"></Image>
+
+                <Button col="2" row="0" class="btn btn-rounded-sm" padding="5" textTransform="none"
+                    backgroundColor="#FFFFFF" color="#3b75ff" text="Make a Sponsor"
+                    fontSize="12" height="25"></Button>
+            </GridLayout>
+
+            <GridLayout columns="auto,*,auto" rows="auto" col="0" row="2"
+                marginBottom="20">
+                <Label col="0" row="0" class="font-weight-bold" paddingLeft="20"
+                    fontSize="30" color="#FFFFFF" text="Taylor Swift"></Label>
+                <Image col="2" row="0" marginRight="10" height="45" width="45"
+                    src="~/assets/images/shape7@3x.png"></Image>
+            </GridLayout>
+
+
+        </GridLayout>
+
+        <Label class="font-weight-bold" marginTop="10" paddingLeft="10"
+            fontSize="20" color="#333333" text="Top Songs"></Label>
+
+        <ListView class="list-group" [items]="listViewData" (itemTap)="onItemTap($event)"
+            height="500" backgroundColor="#f8f8f8">
+            <ng-template let-song="item">
+                <GridLayout orientation="horizontal" class="list-group-item"
+                    rows="auto" columns="auto,*,auto">
+                    <Image col="0" row="0" [src]="song.imageUrl" height="75"
+                        width="75"></Image>
+                    <StackLayout col="1" row="0" marginLeft="15">
+                        <Label marginTop="5" paddingRight="5" [text]="song.title"
+                            class="list-group-item-heading font-weight-bold"
+                            color="#333333"></Label>
+                        <Label marginTop="5" [text]="song.artist" color="#999999"></Label>
+                        <Label marginTop="5" [text]="song.year" color="#999999"></Label>
+                    </StackLayout>
+                    <Label col="2" row="0" horizontalAlignment="right" color="#b9b9b9"
+                        fontSize="24" paddingRight="5" class="fa" text="&#xf142;"></Label>
+
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+
+    <StackLayout col="0" row="1" orientation="horizontal" backgroundColor="#FFFFFF"
+        height="60">
+        <GridLayout rows="*" columns="*,*,*,*,*">
+            <Image col="0" row="0" (tap)="onButtonTap()" height="25" width="25"
+                margin="10" src="~/assets/images/shape2@3x.png"></Image>
+            <Image col="1" row="0" (tap)="onButtonTap()" height="25" width="25"
+                margin="10" src="~/assets/images/shape1@3x.png"></Image>
+            <Image col="2" row="0" (tap)="onButtonTap()" height="60" width="60"
+                margin="10" src="~/assets/images/home@3x.png"></Image>
+            <Image col="3" row="0" (tap)="onButtonTap()" height="25" width="25"
+                margin="10" src="~/assets/images/shape3@3x.png"></Image>
+            <Image col="4" row="0" (tap)="onButtonTap()" height="25" width="25"
+                margin="10" src="~/assets/images/icon04@3x.png"></Image>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

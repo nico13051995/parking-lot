@@ -1,5 +1,22 @@
 // Add your native dependencies here:
 
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/'}
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
+    }
+}
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+dependencies {
+    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
+}
+
 // Uncomment to add recyclerview-v7 dependency
 //dependencies {
 //	compile 'com.android.support:recyclerview-v7:+'
@@ -8,16 +25,20 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "__PACKAGE__" 
+    applicationId = "org.nativescript.parkinglot" 
     
     //override supported platforms
     // ndk {
     //       abiFilters.clear()
     //   		abiFilters "armeabi-v7a"
  		// }
-  
+    manifestPlaceholders = [
+      onesignal_app_id: '5ba2a4ba-1d0a-47bf-8bed-ba1800af7d68',
+      // Project number pulled from dashboard, local value is ignored.
+      onesignal_google_project_number: 'REMOTE'
+    ]
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
-  }  
+  }
 } 
